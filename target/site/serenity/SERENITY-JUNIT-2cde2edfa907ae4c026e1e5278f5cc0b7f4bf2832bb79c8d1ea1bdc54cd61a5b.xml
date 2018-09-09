@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Test iFixit application on ios device" skipped="0" tests="1" time="3.99" timestamp="2018-09-08 05:11:14"><testcase name="Verify items on Acura Support Community"><failure message="The page object class integration.pages.IFixitPage looks dodgy:&#10;Failed to instantiate page (net.thucydides.core.webdriver.UnsupportedDriverException: Could not instantiate class io.appium.java_client.AppiumDriver)" type="net.thucydides.core.pages.WrongPageError">The page object class integration.pages.IFixitPage looks dodgy:
+Failed to instantiate page (net.thucydides.core.webdriver.UnsupportedDriverException: Could not instantiate class io.appium.java_client.AppiumDriver)</failure><system-err>The page object class integration.pages.IFixitPage looks dodgy:
+Failed to instantiate page (net.thucydides.core.webdriver.UnsupportedDriverException: Could not instantiate class io.appium.java_client.AppiumDriver)&#13;
+cucumber.runner.Runner.runPickle(Runner.java:80)&#13;
+✽.User goes to Home page(src/test/java/integration/resources/features/ifixit.feature:4)&#13;
+</system-err></testcase></testsuite>
