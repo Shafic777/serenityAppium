@@ -1,5 +1,0 @@
-<root>
-    <item name='net.thucydides.core.webdriver.WebDriverFacade'>
-        <annotation name='java.lang.Deprecated'/>
-    </item>
-</root>
