@@ -9,34 +9,74 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends MobilePageObject {
     public LoginPage(WebDriver driver) {
-        super(driver);
+        super(driver);}
 
-        @AndroidFindBy(xpath="//android.widget.Button[@text='Log In']")
+        @AndroidFindBy(xpath="//input[@type='email']")
         @iOSFindBy(xpath="//XCUIElementTypeButton[@label='Log In']")
-        private WebElement WPLogInButton;
+        private WebElement loginEmail;
 
-        @AndroidFindBy(xpath="//android.widget.EditText")
+        @AndroidFindBy(xpath="//input[@type='password']")
         @iOSFindBy(xpath="//XCUIElementTypeTextField[@name=\"Email address\"]")
-        private WebElement WPEmailAddressField;
+        private WebElement loginPassword;
 
-        @AndroidFindBy(id="org.wordpress.android:id/primary_button")
+        @AndroidFindBy(xpath="//*[@type='button' and text()='Login']")
         @iOSFindBy(xpath="//XCUIElementTypeButton[@name=\"Next Button\"]")
-        private WebElement WPLogInPageNextButton;
+        private WebElement loginSubmit;
 
-        @AndroidFindBy(id="org.wordpress.android:id/textinput_error")
+        @AndroidFindBy(xpath="//input[@type='email' and @placeholder='Email Address']")
         @iOSFindBy(xpath="//XCUIElementTypeStaticText[contains(@name,'not registered')]")
-        private WebElement WPLogInPageInvalidEmailErrorMessage;
+        private WebElement emailId;
 
-        @FindBy(id="com.flipkart.android:id/btn_mlogin")
-        private WebElement existingUsersignIn;
+        @AndroidFindBy(xpath="//input[@type='email' and @placeholder='Confirm Email Address']")
+        @iOSFindBy(xpath="//XCUIElementTypeButton[@name=\"Next Button\"]")
+        private WebElement confirmEmailId;
 
-        @FindBy(id="com.flipkart.android:id/mobileNo")
-        private WebElement userId;
+        @AndroidFindBy(xpath="//input[@type='text' and @placeholder='First Name']")
+        @iOSFindBy(xpath="//XCUIElementTypeButton[@name=\"Next Button\"]")
+        private WebElement firstName;
 
-        @FindBy(id="com.flipkart.android:id/et_password")
+        @AndroidFindBy(xpath="//input[@type='text' and @placeholder='Last Name']")
+        @iOSFindBy(xpath="//XCUIElementTypeButton[@name=\"Next Button\"]")
+        private WebElement lastName;
+
+        @AndroidFindBy(xpath="//input[@type='password' and @placeholder='Password']")
+        @iOSFindBy(xpath="//XCUIElementTypeButton[@name=\"Next Button\"]")
         private WebElement password;
 
-        @FindBy(id="com.flipkart.android:id/btn_mlogin")
-        private WebElement login_Button;
+        @AndroidFindBy(xpath="//input[@type='password' and @placeholder='Confirm Password']")
+        @iOSFindBy(xpath="//XCUIElementTypeButton[@name=\"Next Button\"]")
+        private WebElement confirmPassword;
+
+        @AndroidFindBy(xpath="//*[@type='button' and text()='Sign Up']")
+        @iOSFindBy(xpath="//XCUIElementTypeButton[@name=\"Next Button\"]")
+        private WebElement signUpButton;
+
+        @AndroidFindBy(xpath="//*[@type='button' and text()='Next']")
+        @iOSFindBy(xpath="//XCUIElementTypeButton[@name=\"Next Button\"]")
+        private WebElement nextButton;
+
+
+    public void enterLoginCredentials(String email,String pass){
+        loginEmail.sendKeys(email);
+        loginPassword.sendKeys(pass);
+        loginSubmit.submit();
     }
+
+    public void clickSignUpOption(){
+        signUpButton.click();
+    }
+
+    public void enterSignUpDetails(String email)
+    {
+        emailId.sendKeys(email);
+        confirmEmailId.sendKeys(email);
+        firstName.sendKeys("sam");
+        lastName.sendKeys("lastname");
+        password.sendKeys("password");
+        confirmPassword.sendKeys("password");
+        nextButton.submit();
+    }
+
+
+
 }
