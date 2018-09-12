@@ -57,6 +57,11 @@ public class LoginPage extends MobilePageObject {
 
 
     public void enterLoginCredentials(String email,String pass){
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         loginEmail.sendKeys(email);
         loginPassword.sendKeys(pass);
         loginSubmit.submit();

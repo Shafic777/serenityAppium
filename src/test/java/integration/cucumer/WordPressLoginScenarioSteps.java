@@ -1,8 +1,7 @@
 package integration.cucumer;
 
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+//import cucumber.annotation.en.*;
+import cucumber.api.java.en.*;
 import net.thucydides.core.annotations.Steps;
 
 import integration.serenitySteps.WordPressLoginSteps;
@@ -12,7 +11,7 @@ public class WordPressLoginScenarioSteps {
     @Steps
     WordPressLoginSteps loginSteps;
 
-    @Given("User is on login page")
+    @Given("User is on login pages")
     public void gotoLoginPage(){
         loginSteps.loginPageInvalidDataInput();
     }

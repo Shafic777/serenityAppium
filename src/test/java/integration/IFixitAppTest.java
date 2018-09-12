@@ -4,14 +4,14 @@ import integration.serenitySteps.IFixitSteps;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import org.openqa.selenium.WebDriver;
 
 @RunWith(CucumberWithSerenity.class)
-@CucumberOptions(features="src/test/java/integration/resources/features/ifixit.feature" ,
-        plugin = {"json:target/cucumber_json/cucumber.json"} )
+@CucumberOptions(features="src/test/resources/features/ifixit.feature")
 public class IFixitAppTest {
 
     @Managed(uniqueSession = false)
@@ -19,7 +19,8 @@ public class IFixitAppTest {
 
     @Steps
     public IFixitSteps userSteps;
-    //@Test
+
+    @Test
     public void verifyInvalidLogin(){
         try {
             userSteps.clickOnStartARepairButton();

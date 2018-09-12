@@ -4,10 +4,7 @@ package integration.cucumer;
  * Created by khanhdo on 8/30/18.
  */
 
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import cucumber.api.java.en.*;
 import integration.serenitySteps.IFixitSteps;
 import net.thucydides.core.annotations.Steps;
 public class iFixitScenarioSteps {

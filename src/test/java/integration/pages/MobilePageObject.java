@@ -10,7 +10,7 @@ import com.google.common.base.Predicate;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.webdriver.WebDriverFacade;
-import org.springframework.format.datetime.joda.MillisecondInstantPrinter;
+//import org.springframework.format.datetime.joda.MillisecondInstantPrinter;
 
 
 public class MobilePageObject extends PageObject {

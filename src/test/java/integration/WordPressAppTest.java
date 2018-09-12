@@ -13,9 +13,9 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import integration.serenitySteps.WordPressLoginSteps;
 
-//@RunWith(SerenityRunner.class)
-@RunWith(CucumberWithSerenity.class)
-@CucumberOptions(features="src/test/java/integration/resources/features/invalid_login.feature" , plugin = {"json:target/cucumber_json/cucumber.json"} )
+@RunWith(SerenityRunner.class)
+//@RunWith(CucumberWithSerenity.class)
+//@CucumberOptions(features="src/test/java/integration/resources/features/invalid_login.feature" , plugin = {"json:target/cucumber_json/cucumber.json"} )
 public class WordPressAppTest {
 
     @Managed(uniqueSession = false)
@@ -25,7 +25,7 @@ public class WordPressAppTest {
     public WordPressLoginSteps userSteps;
 
 
-    //@Test
+    @Test
     public void verifyInvalidLogin(){
         try{
             userSteps.loginPageInvalidDataInput();

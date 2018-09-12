@@ -1,8 +1,6 @@
 package integration.cucumer;
 
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import cucumber.api.java.en.*;
 import integration.serenitySteps.LoginSteps;
 import integration.serenitySteps.WordPressLoginSteps;
 import net.thucydides.core.annotations.Managed;
@@ -21,6 +19,11 @@ public class LoginScenarioSteps {
     @Given("User is on login page")
     public void gotoLoginPage(){
        // loginSteps.enterLoginData(email,pass);
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @When("I login using \"(.*)\" and \"(.*)\" credentials")

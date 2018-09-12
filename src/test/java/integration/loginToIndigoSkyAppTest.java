@@ -15,7 +15,7 @@ import integration.serenitySteps.WordPressLoginSteps;
 
 //@RunWith(SerenityRunner.class)
 @RunWith(CucumberWithSerenity.class)
-@CucumberOptions(features="src/test/java/integration/resources/features/loginFlow.feature" , plugin = {"json:target/cucumber_json/cucumber.json"} )
+@CucumberOptions(features="src/test/resources/features/loginFlow.feature")
 public class loginToIndigoSkyAppTest {
 
 }
