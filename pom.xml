@@ -12,9 +12,10 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <serenity.version>1.1.37-rc.6</serenity.version> <!-- https://bintray.com/serenity/maven/serenity-core/ -->
-        <serenity.maven.version>1.1.37-rc.6</serenity.maven.version>
-        <serenity.cucumber.version>1.1.9</serenity.cucumber.version>
+        <serenity.version>1.9.45</serenity.version> <!-- https://bintray.com/serenity/maven/serenity-core/ -->
+        <serenity.maven.version>1.9.45</serenity.maven.version>
+        <serenity.cucumber.version>1.9.15</serenity.cucumber.version>
+        <io.cucumber.version>2.4.0</io.cucumber.version>
     </properties>
 
     <repositories>
@@ -45,36 +46,85 @@
             <version>${serenity.version}</version>
         </dependency>
         <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>5.0.4</version>
+        </dependency>
+        <!--<dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-java</artifactId>
-            <!--<scope>test</scope>-->
+            &lt;!&ndash;<scope>test</scope>&ndash;&gt;
             <version>1.2.4</version>
+        </dependency>-->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${io.cucumber.version}</version>
         </dependency>
         <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${io.cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+       <!-- <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java8</artifactId>
+            <version>3.0.2</version>
+        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-jvm -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-jvm</artifactId>
+            <version>${io.cucumber.version}</version>
+            <type>pom</type>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.cucumber/gherkin -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>gherkin</artifactId>
+            <version>5.1.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.cucumber/datatable -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>datatable</artifactId>
+            <version>1.1.3</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-core</artifactId>
+            <version>${io.cucumber.version}</version>
+        </dependency>
+
+        <!--<dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-junit</artifactId>
             <version>1.2.4</version>
             <scope>test</scope>
-        </dependency>
+        </dependency>-->
 
-        <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-jvm -->
+
+       <!-- &lt;!&ndash; https://mvnrepository.com/artifact/info.cukes/cucumber-jvm &ndash;&gt;
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-jvm</artifactId>
             <version>1.2.4</version>
             <type>pom</type>
         </dependency>
-
+-->
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-junit</artifactId>
             <version>${serenity.version}</version>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-core</artifactId>
             <version>1.2.4</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-cucumber</artifactId>

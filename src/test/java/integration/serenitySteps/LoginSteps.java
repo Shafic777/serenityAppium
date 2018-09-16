@@ -2,7 +2,6 @@ package integration.serenitySteps;
 
 
 import integration.pages.LoginPage;
-import integration.pages.WordPressLoginPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 

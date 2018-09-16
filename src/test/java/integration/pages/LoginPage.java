@@ -2,9 +2,12 @@ package integration.pages;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSFindBy;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class LoginPage extends MobilePageObject {
@@ -57,11 +60,15 @@ public class LoginPage extends MobilePageObject {
 
 
     public void enterLoginCredentials(String email,String pass){
-        try {
+       /* try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
+        WebDriverWait wait = new WebDriverWait(getDriver(),5);
+        wait.until(ExpectedConditions.visibilityOf(loginEmail));
+        System.out.println("insiade mehod:"+getDriver().getPageSource());
+        System.out.println("inside ###:"+getDriver().manage().logs());
         loginEmail.sendKeys(email);
         loginPassword.sendKeys(pass);
         loginSubmit.submit();

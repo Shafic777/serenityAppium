@@ -2,10 +2,12 @@ package integration.cucumer;
 
 import cucumber.api.java.en.*;
 import integration.serenitySteps.LoginSteps;
-import integration.serenitySteps.WordPressLoginSteps;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginScenarioSteps {
 
@@ -16,7 +18,7 @@ public class LoginScenarioSteps {
     @Steps
     LoginSteps loginSteps;
 
-    @Given("User is on login page")
+    @Given("^User is on login page$")
     public void gotoLoginPage(){
        // loginSteps.enterLoginData(email,pass);
         try {
@@ -28,6 +30,7 @@ public class LoginScenarioSteps {
 
     @When("I login using \"(.*)\" and \"(.*)\" credentials")
     public void enterValidData(String email,String pass){
+
         loginSteps.enterLoginData(email,pass);
     }
 

@@ -15,21 +15,22 @@ import net.thucydides.core.webdriver.WebDriverFacade;
 
 public class MobilePageObject extends PageObject {
     public MobilePageObject(final WebDriver driver) {
-        super(driver);
-     /*   super(driver, new Predicate<PageObject>() {
+      //  super(driver);
+        super(driver, new Predicate<PageObject>() {
                     @Override
                     public boolean apply(PageObject page) {
+                        driver.manage().timeouts().implicitlyWait(500,TimeUnit.MILLISECONDS);
                         PageFactory.initElements(new AppiumFieldDecorator(((WebDriverFacade) page.getDriver()).getProxiedDriver()), page);
 
 
-    *//*            PageFactory
+               /* PageFactory
                         .initElements(new AppiumFieldDecorator(((WebDriverFacade) page.getDriver()).getProxiedDriver(),
-                                page.getImplicitWaitTimeout().in(TimeUnit.SECONDS), TimeUnit.SECONDS), page);
-                //page.getImplicitWaitTimeout(100, TimeUnit.MICROSECONDS), page);*//*
+                                page.getImplicitWaitTimeout().in(TimeUnit.SECONDS), TimeUnit.SECONDS), page);*/
+                //page.getImplicitWaitTimeout(100, TimeUnit.MICROSECONDS), page);
                 return true;
-            }*/
+            }
 
-        //});
+        });
 
     }
 
