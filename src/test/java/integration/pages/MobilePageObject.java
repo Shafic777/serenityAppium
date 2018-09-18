@@ -19,7 +19,7 @@ public class MobilePageObject extends PageObject {
         super(driver, new Predicate<PageObject>() {
                     @Override
                     public boolean apply(PageObject page) {
-                        driver.manage().timeouts().implicitlyWait(500,TimeUnit.MILLISECONDS);
+                     //   driver.manage().timeouts().implicitlyWait(500,TimeUnit.MILLISECONDS);
                         PageFactory.initElements(new AppiumFieldDecorator(((WebDriverFacade) page.getDriver()).getProxiedDriver()), page);
 
 

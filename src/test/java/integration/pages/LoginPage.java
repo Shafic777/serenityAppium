@@ -65,9 +65,9 @@ public class LoginPage extends MobilePageObject {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }*/
-        WebDriverWait wait = new WebDriverWait(getDriver(),5);
-        wait.until(ExpectedConditions.visibilityOf(loginEmail));
-        System.out.println("insiade mehod:"+getDriver().getPageSource());
+        /*WebDriverWait wait = new WebDriverWait(getDriver(),5);
+        wait.until(ExpectedConditions.visibilityOf(loginEmail));*/
+        getDriver().findElement(By.xpath("//input[@type='email']"));
         System.out.println("inside ###:"+getDriver().manage().logs());
         loginEmail.sendKeys(email);
         loginPassword.sendKeys(pass);
