@@ -2,6 +2,7 @@ package integration.pages;
 
 import java.util.concurrent.TimeUnit;
 
+import io.appium.java_client.pagefactory.TimeOutDuration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -20,12 +21,15 @@ public class MobilePageObject extends PageObject {
                     @Override
                     public boolean apply(PageObject page) {
                      //   driver.manage().timeouts().implicitlyWait(500,TimeUnit.MILLISECONDS);
-                        PageFactory.initElements(new AppiumFieldDecorator(((WebDriverFacade) page.getDriver()).getProxiedDriver()), page);
+               //         PageFactory.initElements(new AppiumFieldDecorator(((WebDriverFacade) page.getDriver()).getProxiedDriver()), page);
 
+                       // driver.manage().timeouts().implicitlyWait(5000,TimeUnit.MILLISECONDS);
 
-               /* PageFactory
+     /*           PageFactory
                         .initElements(new AppiumFieldDecorator(((WebDriverFacade) page.getDriver()).getProxiedDriver(),
-                                page.getImplicitWaitTimeout().in(TimeUnit.SECONDS), TimeUnit.SECONDS), page);*/
+                                page.getImplicitWaitTimeout().toSeconds(), TimeUnit.SECONDS), page);*/
+                        PageFactory.initElements(new AppiumFieldDecorator(driver,
+                                new TimeOutDuration(5, TimeUnit.SECONDS)), page);
                 //page.getImplicitWaitTimeout(100, TimeUnit.MICROSECONDS), page);
                 return true;
             }

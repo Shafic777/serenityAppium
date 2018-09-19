@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class LoginScenarioSteps {
 
 
-    @Managed(uniqueSession = false)
+    @Managed(driver = "appium")
     public WebDriver webdriver;
 
     @Steps

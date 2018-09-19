@@ -15,4 +15,4 @@ Scenario Outline: Login with the given user details
 Examples:
     | emailId    | password |
     | testuser_1 | Test@153 |
-    | testuser_2 | Test@153 |
+

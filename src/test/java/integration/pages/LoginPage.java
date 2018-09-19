@@ -2,19 +2,28 @@ package integration.pages;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSFindBy;
+import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
+
 
 public class LoginPage extends MobilePageObject {
     public LoginPage(WebDriver driver) {
-        super(driver);}
 
-        @AndroidFindBy(xpath="//input[@type='email']")
+        super(driver);
+//        driver.manage().timeouts().implicitlyWait(5000,TimeUnit.MILLISECONDS);
+}
+
+        @AndroidFindBy(xpath="//input[@placeholder='Email address']")
+       // @AndroidFindBy(xpath="//input[@type='email']")
+        @CacheLookup
         @iOSFindBy(xpath="//XCUIElementTypeButton[@label='Log In']")
         private WebElement loginEmail;
 
@@ -60,15 +69,17 @@ public class LoginPage extends MobilePageObject {
 
 
     public void enterLoginCredentials(String email,String pass){
-       /* try {
-            Thread.sleep(5000);
+        try {
+            Thread.sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }*/
+        }
         /*WebDriverWait wait = new WebDriverWait(getDriver(),5);
         wait.until(ExpectedConditions.visibilityOf(loginEmail));*/
-        getDriver().findElement(By.xpath("//input[@type='email']"));
-        System.out.println("inside ###:"+getDriver().manage().logs());
+      //  getDriver().findElement(By.xpath("//input[@type='email']"));
+     //   System.out.println("inside ###:"+getDriver().manage().logs());
+      //  getDriver().manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+
         loginEmail.sendKeys(email);
         loginPassword.sendKeys(pass);
         loginSubmit.submit();
